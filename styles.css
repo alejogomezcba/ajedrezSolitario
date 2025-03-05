@@ -2,13 +2,84 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: #f4f4f4;
+    overflow: hidden;
+    overflow-y: scroll;
+    max-width: 750px;
 }
+
+/* Contenedor del tablero y etiquetas */
+.board-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+}
+
+/* Contenedor de la grilla con números a la izquierda */
+.board-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+/* Columnas (1, 2, 3) a la izquierda en vertical */
+.col-labels {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px;
+    margin-right: 5px;
+}
+
+.col-labels p {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Filas (A, B, C) debajo en horizontal */
+.row-labels {
+    display: flex;
+    justify-content: space-evenly;
+    width: 250px;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+.row-labels p {
+    width: 80px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Ajustes responsivos */
+@media screen and (max-width: 500px) {
+    .col-labels p, 
+    .row-labels p {
+        font-size: 14px;
+        /* width: 50px;
+        height: 50px; */
+    }
+
+    .board {
+        grid-template-columns: repeat(3, 50px);
+        grid-template-rows: repeat(3, 50px);
+        width: 160px;
+    }
+}
+
+
 .board {
     display: grid;
     grid-template-columns: repeat(3, 80px);
     grid-template-rows: repeat(3, 80px);
     gap: 5px;
-    margin: 20px auto;
+    margin: 0 auto;
     width: 250px;
     background-color: #000;
     padding: 5px;
@@ -87,27 +158,4 @@ body {
 }
 .btn-reiniciar:hover {
     background-color: #45a049;
-}
-.cols {
-    flex-direction: column;
-    width: 80px;
-    left: 20%;
-    height: 260px;
-}
-
-.rows {
-    width: 260px;
-    left: 32%;
-    top: 36%
-}
-
-.custom-class{
-    position: absolute;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: space-evenly;
-}
-.custom-class p{
-    width: 80px;
 }

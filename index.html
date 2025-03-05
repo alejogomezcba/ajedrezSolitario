@@ -11,18 +11,27 @@
 
 <body>
     <h1>Ajedrez Solitario</h1>
-    <div class="cols custom-class">
-        <p>1</p>
-        <p>2</p>
-        <p>3</p>
-
+    <div class="board-container">
+        <!-- Letras A, B, C en horizontal abajo -->
+        <div class="row-labels">
+            <p>A</p>
+            <p>B</p>
+            <p>C</p>
+        </div>
+        <div class="board-wrapper">
+            <!-- Números 1, 2, 3 en vertical a la izquierda -->
+            <div class="col-labels">
+                <p>3</p>
+                <p>2</p>
+                <p>1</p>
+            </div>
+    
+            <!-- Tablero de juego -->
+            <div class="board" id="board"></div>
+        </div>
+    
     </div>
-    <div class="board" id="board"> </div>
-    <div class="rows custom-class">
-        <p>A</p>
-        <p>B</p>
-        <p>C</p>
-    </div>
+    
     <div class="controls">
         <p>Movimientos: <span id="moves">0</span></p>
         <button onclick="resetGame()">Reiniciar</button>
