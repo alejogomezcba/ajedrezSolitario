@@ -5,6 +5,7 @@ body {
     overflow: hidden;
     overflow-y: scroll;
     max-width: 750px;
+    margin: 0 auto;
 }
 
 /* Contenedor del tablero y etiquetas */
